@@ -32,6 +32,21 @@ body{
     gap: 1rem;
     flex-wrap: wrap;
 
+
+}   
+
+.financial_buttom {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.financial_buttom svg {
+    cursor: pointer;
+}
+
+.financial_buttom:visited {
+    color: inherit;
 }
 
 
@@ -73,7 +88,7 @@ body{
 
 #to-do-list li{
     list-style-type: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-transform: capitalize;
     align-items: center;
     display: flex;
