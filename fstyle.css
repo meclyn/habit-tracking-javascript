@@ -22,7 +22,7 @@ body{
     gap: 4rem;
 }
 
-.content_f {
+.content_fin {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -81,7 +81,7 @@ body{
 
 }
 
-#financial_list:hover {
+#financial_list li:hover {
     background-color: var(--color-dark3);
     transition: .4s;
     border-radius: 1rem;
