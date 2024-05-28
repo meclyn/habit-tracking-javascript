@@ -36,7 +36,8 @@ body{
 }
 
 #input_new_fin,
-#btn_new_taskfin{
+#btn_new_taskfin,
+#input_number_fin{
     border: none;
     font-size: 1rem;
     outline: none;
@@ -47,6 +48,12 @@ body{
 #input_new_fin{
     width: 20rem;
     border-radius: 1rem;
+}
+
+
+#input_number_fin{
+    border-radius: 1rem;
+    width: 10rem;
 }
 
 #btn_new_taskfin{

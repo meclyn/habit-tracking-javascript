@@ -10,16 +10,20 @@ function validateNewFin(){
 
 function newTaskFin(){
     let input = document.getElementById('input_new_fin')
+    let inputnumber = document.getElementById('input_number_fin')
     input.style.border = ''
+    inputnumber.style.border = ''
 
     let valuesfin = JSON.parse(localStorage.getItem(localStorageName) || '[]')
     valuesfin.push({
         name:input.value
+        ,number:inputnumber.value
     })
     localStorage.setItem(localStorageName,JSON.stringify(valuesfin))
     showValues()
 
     input.value = ""
+    inputnumber.value = ""
 
     
 
@@ -40,7 +44,7 @@ function showValues(){
 
 function removeItemFin(data){
     let valuesfin = JSON.parse(localStorage.getItem(localStorageName) || '[]')
-    let index = valuesfin.findIndex(x => x.name == data)
+    let index = valuesfin.findIndex(x => x.name,number == data)
     valuesfin.splice(index,1)
     localStorage.setItem(localStorageName, JSON.stringify(valuesfin))
     showValues()
