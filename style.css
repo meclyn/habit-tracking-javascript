@@ -39,6 +39,9 @@ body{
     display: flex;
     text-decoration: none;
     color: inherit;
+    height: 50px;
+    width: 50px;
+    ;
 }
 
 .financial_buttom svg {
