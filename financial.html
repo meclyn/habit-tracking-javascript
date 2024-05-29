@@ -14,7 +14,7 @@
         <div class = "content_add_fin">
         <input type="text" name="new_fin" id="input_new_fin" placeholder="Insira seus gastos">
         <input type="number" name="number_fin" id="input_number_fin" placeholder="Insira o valor">
-        <button id="btn_new_taskfin" onclick="newTaskFin()" title="Clique aqui para adicionar seu novo gasto" >
+        <button id="btn_new_taskfin" onclick="newTaskFin(), soma_financial()" title="Clique aqui para adicionar seu novo gasto" >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
             </svg>
@@ -23,8 +23,11 @@
         </div>
         <div class = "content_body_fin">
             <ul id='financial_list'></ul>
+            <p>A SOMA É: <span id = "total_sum"></span> </p>
         </div>
     </div>
+
+
 </body>
 <script src="financial.js"></script>
 </html>

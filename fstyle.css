@@ -114,3 +114,9 @@ body{
     background-color: var(--color-green2);
 }
 
+#soma_financial{
+    display: flex;
+    color: var(--color-white);
+    
+}
+
