@@ -114,9 +114,17 @@ body{
     background-color: var(--color-green2);
 }
 
-#soma_financial{
+#total_sum{
     display: flex;
     color: var(--color-white);
-    
+    gap: 1rem;
+    padding: 0;
 }
 
+#total_sum:hover,
+#titulo_sum:hover{
+    background-color: var(--color-dark3);
+    transition: .4s;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
