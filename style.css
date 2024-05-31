@@ -105,7 +105,7 @@ body{
     padding-left: 1rem;
 }
 
-#btn_ok{
+.btn_ok{
     border: none;
     background-color: var(--color-green);
     color: var(--color-white);
@@ -117,10 +117,11 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: .4s;
 }
 
 
-#btn_ok:hover{
-    background-color: var(--color-green2);
+
+
+.btn_ok.completed {
+    background-color: var(--color-dark3);
 }
