@@ -22,6 +22,24 @@ body{
     gap: 4rem;
 }
 
+.habits_buttom {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    height: 50px;
+    width: 50px;
+    ;
+}
+
+.habits_buttom svg {
+    cursor: pointer;
+}
+
+.habits_buttom:visited {
+    color: inherit;
+
+}
+
 .content_fin {
     display: flex;
     flex-direction: column;
