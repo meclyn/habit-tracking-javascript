@@ -146,3 +146,23 @@ body{
     border-radius: 1rem;
     padding-left: 1rem;
 }
+
+#reset_month{
+    background-color: var(--color-red);
+    border: none;
+    display: flex;
+    flex-direction: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .4s;
+    color: white;
+    padding: .2rem .6rem;
+}
+
+#reset_month:hover{
+    background-color: var(--color-red2);
+}

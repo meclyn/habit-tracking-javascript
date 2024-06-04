@@ -68,5 +68,14 @@ function soma_financial(){
 
 }
 
+
+function reset_month(){
+    let valuesfin = JSON.parse(localStorage.removeItem(localStorageName) || '[]')
+    showValues()
+    soma_financial()
+
+
+}
+
 showValues()
 soma_financial()

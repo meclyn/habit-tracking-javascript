@@ -138,4 +138,9 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: .4s;
+}
+
+.btn_remove:hover{
+    background-color: var(--color-red2);
 }
