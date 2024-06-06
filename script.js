@@ -1,13 +1,13 @@
 const localStorageName = 'dados';
 
-function validateNewTask(){
+function validateNewTask() {
     let values = JSON.parse(localStorage.getItem(localStorageName) || '[]');
     let inputValue = document.getElementById('input_new_task').value;
     let exists = values.find(x => x.name === inputValue);
     return exists ? true : false;
 }
 
-function newTask(){
+function newTask() {
     let input = document.getElementById('input_new_task');
     input.style.border = '';
 
@@ -23,23 +23,27 @@ function newTask(){
         values.push({ name: input.value, completed: false });
         localStorage.setItem(localStorageName, JSON.stringify(values));
         showValues();
+        updateProgressBar();  // Atualizar a barra de progresso após adicionar uma nova tarefa
     }
     input.value = '';
 }
 
-function toggleTaskCompletion(taskName){
+function toggleTaskCompletion(taskName) {
     let values = JSON.parse(localStorage.getItem(localStorageName) || '[]');
+    let taskCompleted = false;
     values = values.map(task => {
         if (task.name === taskName) {
             task.completed = !task.completed;
+            taskCompleted = task.completed;
         }
         return task;
     });
     localStorage.setItem(localStorageName, JSON.stringify(values));
     showValues();
+    updateProgressBar();  // Atualizar a barra de progresso após alternar o status da tarefa
 }
 
-function showValues(){
+function showValues() {
     let values = JSON.parse(localStorage.getItem(localStorageName) || '[]');
     let list = document.getElementById('to-do-list');
     list.innerHTML = '';
@@ -49,7 +53,7 @@ function showValues(){
             <li>
             <button class="btn_remove" onclick="removeItem('${task.name}')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0"/>
                 </svg>
             </button>
             ${task.name}
@@ -63,13 +67,14 @@ function showValues(){
     }
 }
 
-function removeItem(taskName){
+function removeItem(taskName) {
     let values = JSON.parse(localStorage.getItem(localStorageName) || '[]');
     let index = values.findIndex(x => x.name == taskName);
     if (index !== -1) {
         values.splice(index, 1);
         localStorage.setItem(localStorageName, JSON.stringify(values));
         showValues();
+        updateProgressBar();  // Atualizar a barra de progresso após remover uma tarefa
     }
 }
 
@@ -77,6 +82,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add_task_button');
     addButton.addEventListener('click', newTask);
     showValues();
+    updateProgressBar();  // Atualizar a barra de progresso ao carregar a página
 });
 
-showValues()
+function updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    let values = JSON.parse(localStorage.getItem(localStorageName) || '[]');
+    let completedTasks = values.filter(task => task.completed).length;
+    let totalTasks = values.length;  // Obter o número total de tarefas do localStorage
+    let progressPercentage = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
+    progressBar.style.width = progressPercentage + '%';
+}
+
+showValues();
+updateProgressBar();
