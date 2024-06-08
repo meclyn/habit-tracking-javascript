@@ -78,3 +78,22 @@ function removegoal(taskGoal){
     }
 
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+    const addButtongoal = document.getElementById('add_task_button'); //atencao aqui
+    addButtongoal.addEventListener('click',goals);
+    showValues();
+    updateProgressBar();
+});
+
+function updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    let values = JSON.parse(localstorage.getItem(localStorageName) || '[]');
+    let timeGoals = values.filter(task => task.time).length;
+    let totalGoals = values.length;
+    let progressPercentage = totalTasks > 0 ? (timeGoals / totalGoals) * 100 : 0;
+    progressBar.style.width = progressPercentage + '%';
+}
+
+showValues();
+updateProgressBar();
