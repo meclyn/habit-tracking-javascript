@@ -19,3 +19,23 @@ body{
     align-items: center;
     gap: 4rem;
 }
+
+.index_button, .financial_button {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    height: 50px;
+    width: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.index_button svg, .financial_button svg {
+    cursor: pointer;
+
+}
+
+.index_button:visited, .financial_buttom:visited {
+    color: inherit;
+}
