@@ -20,6 +20,11 @@ body{
     gap: 4rem;
 }
 
+.button_container {
+    display: flex;
+    gap: 2rem;
+}
+
 .index_button, .financial_button {
     display: flex;
     text-decoration: none;

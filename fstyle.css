@@ -22,7 +22,7 @@ body{
     gap: 4rem;
 }
 
-.habits_buttom {
+.habits_buttom, .goals_button {
     display: flex;
     text-decoration: none;
     color: inherit;
@@ -31,11 +31,16 @@ body{
     ;
 }
 
-.habits_buttom svg {
+.button_container{
+    display: flex;
+    gap: 2rem;
+}
+
+.habits_buttom svg, .goals_button svg {
     cursor: pointer;
 }
 
-.habits_buttom:visited {
+.habits_buttom:visited, .goals_button:visited {
     color: inherit;
 
 }
