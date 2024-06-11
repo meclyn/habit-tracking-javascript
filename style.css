@@ -35,19 +35,26 @@ body{
 
 }   
 
-.financial_buttom, .goals_button {
+.button_container {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.financial_button, .goals_button {
     display: flex;
     text-decoration: none;
     color: inherit;
     height: 50px;
     width: 50px;
+    
 }
 
-.financial_buttom svg {
+.financial_button svg, .goals_button svg {
     cursor: pointer;
 }
 
-.financial_buttom:visited {
+.financial_button:visited, .goals_button:visited {
     color: inherit;
 }
 
