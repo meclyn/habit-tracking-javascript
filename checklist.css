@@ -21,3 +21,80 @@ body{
     align-items: center;
     gap: 4rem;
 }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.content_add_item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button_container{
+    display:flex;
+    gap: 2rem;
+}
+
+
+.goals_button, .financial_button {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    height: 50px;
+    width: 50px;
+
+
+}
+
+
+
+.goals_button svg, .financial_button svg {
+    cursor: pointer;
+}
+
+.goals_button:visited, .financial_button:visited {
+    color: inherit;
+}
+
+#input_new_check,
+#btn_new_check{
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    padding: 1rem;
+}
+
+
+
+#input_new_check{
+    width: 20rem;
+    border-radius: 1rem;
+}
+
+#btn_new_check{
+    background-color: var(--color-dark2);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: .4s;
+
+}
+
+#btn_new_check:hover{
+    background-color: var(--color-dark3);
+}
+
+#daily_check_list:hover{
+    background-color: var(--color-dark3);
+    transition: .4s;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
