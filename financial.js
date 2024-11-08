@@ -19,7 +19,7 @@ function newTaskFin(){
         inputnumber.style.border = '1px solid red'
         alert('Preencha o campo')
     } else if(validateNewFin()){
-        alert('Já existente')
+        alert('Já existente.')
     } else{
         let valuesfin = JSON.parse(localStorage.getItem(localStorageName) || '[]')
         valuesfin.push({
